@@ -4,15 +4,15 @@
   "description": "Tasks for RSS",
   "main": "index.js",
   "engines": {
-    "node": "16",
-    "npm": "8"
+    "node": "20",
+    "npm": "9"
   },
   "directories": {
     "test": "test"
   },
   "scripts": {
     "test": "mocha --reporter mocha-multi-reporters --reporter-options configFile=config.json",
-    "posttest": "npx allure generate allure-results --clean -o allure-report",
+    "posttest": "allure generate --clean",
     "format": "prettier --write ./src/**/*.js",
     "lint": "eslint ./src/**/*.js"
   },
@@ -41,5 +41,8 @@
     "mocha-junit-reporter": "^2.2.1",
     "mocha-multi-reporters": "^1.5.1",
     "sinon": "14.0.0"
+  },
+  "dependencies": {
+    "allure-commandline": "^2.25.0"
   }
 }

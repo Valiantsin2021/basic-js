@@ -12,7 +12,7 @@
   "reporter": "spec",
   "slow": "800",
   "timeout": "10000",
-  "spec": "./test/test.spec.js",
+  "spec": "./test/*.spec.js",
   "inline-diffs ": true,
   "recursive": true,
   "exit": true,
