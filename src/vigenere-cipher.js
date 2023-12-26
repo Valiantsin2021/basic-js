@@ -56,7 +56,8 @@ class VigenereCipheringMachine {
       if (enc) {
         newInd = (currentCharInd + currentKeyInd) % alphabetLength
       } else {
-        newInd = (currentCharInd - currentKeyInd + alphabetLength) % alphabetLength
+        newInd =
+          (currentCharInd - currentKeyInd + alphabetLength) % alphabetLength
       }
 
       newMessage += this.alphabet[newInd]

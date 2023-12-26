@@ -25,11 +25,11 @@ const { NotImplementedError } = require('../extensions/index.js')
 function getDNSStats(domains) {
   const result = {}
 
-  domains.forEach((domain) => {
+  domains.forEach(domain => {
     const parts = domain.split('.').reverse()
     let currentKey = ''
 
-    parts.forEach((part) => {
+    parts.forEach(part => {
       currentKey += `.${part}`
 
       if (!result[currentKey]) {

@@ -20,7 +20,12 @@ const HALF_LIFE_PERIOD = 5730
 function dateSample(sampleActivity) {
   const parsedActivity = parseFloat(sampleActivity)
 
-  if (typeof sampleActivity !== 'string' || isNaN(parsedActivity) || parsedActivity <= 0 || parsedActivity > MODERN_ACTIVITY) {
+  if (
+    typeof sampleActivity !== 'string' ||
+    isNaN(parsedActivity) ||
+    parsedActivity <= 0 ||
+    parsedActivity > MODERN_ACTIVITY
+  ) {
     return false
   }
 

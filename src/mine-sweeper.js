@@ -34,7 +34,13 @@ function minesweeper(matrix) {
       if (cell) {
         for (let ni = i - 1; ni <= i + 1; ni++) {
           for (let nj = j - 1; nj <= j + 1; nj++) {
-            if (ni >= 0 && ni < rows && nj >= 0 && nj < cols && !(ni === i && nj === j)) {
+            if (
+              ni >= 0 &&
+              ni < rows &&
+              nj >= 0 &&
+              nj < cols &&
+              !(ni === i && nj === j)
+            ) {
               result[ni][nj]++
             }
           }

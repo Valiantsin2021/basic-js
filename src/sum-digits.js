@@ -18,10 +18,10 @@ function getSumOfDigits(n) {
       .toString()
       .split('')
       .map(Number)
-      .reduce((sum, digit) => sum + digit, 0);
+      .reduce((sum, digit) => sum + digit, 0)
   }
 
-  return n;
+  return n
 }
 module.exports = {
   getSumOfDigits

@@ -20,11 +20,11 @@ function getMatrixElementsSum(matrix) {
   return matrix.reduce((sum, row, i) => {
     row.forEach((value, j) => {
       if (i === 0 || matrix[i - 1][j] !== 0) {
-        sum += value;
+        sum += value
       }
-    });
-    return sum;
-  }, 0);
+    })
+    return sum
+  }, 0)
 }
 module.exports = {
   getMatrixElementsSum

@@ -1,0 +1,44 @@
+name: Test local app in a docker container (Playwright)
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: 
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
+permissions:
+  contents: read
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+      # checkout application code
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: Checkout project
+      # install the dependencies
+        run: npm install
+      # Cache Docker layers
+      - name: Cache node-packages
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.npm
+            /usr/local/bin/docker
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/*.lock') }}
+      # run tests
+      - name: Run tests
+        run: npm t
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: allure-report
+          path: allure-report
+          retention-days: 30
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: allure-report

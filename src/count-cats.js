@@ -13,7 +13,7 @@
  *
  */
 function countCats(array) {
- return array.flat(Infinity).filter(el => el === '^^').length
+  return array.flat(Infinity).filter(el => el === '^^').length
 }
 module.exports = {
   countCats

@@ -24,13 +24,19 @@ function transform(arr) {
         i++
         break
       case '--discard-prev':
-        if (i > 0 && arr[i - 2] !== '--discard-next') result.pop()
+        if (i > 0 && arr[i - 2] !== '--discard-next') {
+          result.pop()
+        }
         break
       case '--double-next':
-        if (i < arr.length - 1) result.push(arr[i + 1])
+        if (i < arr.length - 1) {
+          result.push(arr[i + 1])
+        }
         break
       case '--double-prev':
-        if (i > 0 && arr[i - 2] !== '--discard-next') result.push(result[result.length - 1])
+        if (i > 0 && arr[i - 2] !== '--discard-next') {
+          result.push(result[result.length - 1])
+        }
         break
       default:
         result.push(arr[i])
